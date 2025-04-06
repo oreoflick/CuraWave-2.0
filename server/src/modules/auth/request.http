@@ -1,0 +1,34 @@
+### Create a new user
+POST https://teletip-marmara.herokuapp.com/auth/signup
+Content-Type: application/json
+
+{
+    "email": "test1@test.com",
+    "password": "123test",
+    "name": "Cihat",
+    "surname": "Yeşildağ",
+    "address": "xyz mh. abc sk. No:56 Osmangazi/Bursa",
+    "phoneNumber": "+905354330771",
+    "height": 185,
+    "weight": 80,
+    "bloodType": "B+",
+    "type" : "admin"
+}
+
+### Sign in as an existing user
+POST https://teletip-marmara.herokuapp.com/auth/signin
+Content-Type: application/json
+
+{
+    "email": "test1@test.com",
+    "password": "123test",
+    "type": "admin"
+}
+
+### Sign out
+POST http://localhost:5000/auth/signout
+Content-Type: application/json
+
+{
+
+}

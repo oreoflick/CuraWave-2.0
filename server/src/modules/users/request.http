@@ -1,0 +1,108 @@
+### Get user info
+GET http://localhost:5000/users/1?type=patient
+
+
+#######  DIAGNOSES
+
+
+
+### Add new diagnose
+POST https://teletip-marmara.herokuapp.com/diagnoses
+Content-Type: application/json
+
+{
+    "name": "Dementia"
+}
+
+### Get all diagnoses
+GET http://localhost:5000/diagnoses
+
+
+### Get diagnose by id
+GET http://localhost:5000/diagnoses/1
+
+### Delete diagnose by id
+DELETE http://localhost:5000/diagnoses/3
+
+### Add new patient diagnose
+POST https://teletip-marmara.herokuapp.com/users/1/patient-diagnoses?type=patient
+Content-Type: application/json
+
+{
+    "diagnoseId": 3,
+    "startDate": "2020-06-06"
+}
+
+### Get all diagnoses of a patient
+GET http://localhost:5000/users/1/patient-diagnoses
+
+
+### Approve a patient diagnose
+PUT http://localhost:5000/users/1/patient-diagnoses/2/approval-status
+Content-Type: application/json
+
+{}
+
+
+### Remove approval of a patient diagnose
+DELETE http://localhost:5000/users/1/patient-diagnoses/2/approval-status
+Content-Type: application/json
+
+{}
+
+
+######## MEDICATIONS
+
+### Add new medication
+POST https://teletip-marmara.herokuapp.com/medications
+Content-Type: application/json
+
+{
+    "name": "Otrivine"
+}
+
+### Get all medications
+GET http://localhost:5000/medications
+
+
+### Get medication by id
+GET http://localhost:5000/medications/1
+
+### Delete medication by id
+DELETE http://localhost:5000/medications/1
+
+### Add new patient medication
+POST http://localhost:5000/users/1/patient-medications
+Content-Type: application/json
+
+{
+    "medicationId": 1,
+    "startDate": "2010-05-05",
+    "endDate": "2010-06-05",
+    "dailyDosage": 10
+}
+
+### Get all medications of a patient
+GET http://localhost:5000/users/1/patient-medications
+
+
+####### RELATIVES
+
+### Add a new relative for the patient
+POST http://localhost:5000/users/1/relatives
+Content-Type: application/json
+
+{
+    "name": "Yusuf Mert",
+    "surname": "Toros",
+    "phoneNumber": "+905355353535",
+    "relation" : "friend"
+}
+
+### Get all relatives for the target patient
+GET http://localhost:5000/users/1/relatives
+Content-Type: application/json
+
+### Get specified relative for the target patient
+GET http://localhost:5000/users/1/relatives/1
+Content-Type: application/json
